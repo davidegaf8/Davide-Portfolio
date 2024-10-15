@@ -1,0 +1,26 @@
+<section class="about">
+  <div class="slider-container">
+    <div *ngFor="let slide of slides; let i = index" class="slide" [ngClass]="{'active': i === currentSlideIndex}"
+      [style.backgroundImage]="'url(' + slide.image + ')'">
+    </div>
+  </div>
+
+  <div class="about-me">
+    <div class="about-photo">
+      <img src="../assets/img/Davide-student.jpg">
+    </div>
+    <div class="about-text">
+      <h1>About <span>Me</span></h1>
+      <p>I began my university studies in Economics and Management while simultaneously gaining valuable experience in
+        the tourism industry as a receptionist. During this time, I developed a growing interest in the world of digital
+        technology and web development, with a particular fascination for blockchain and its wide array of potential
+        applications.<br><br>
+        Alongside my passion for technology, I have a deep love for music, particularly the guitar, which has led me to
+        not only refine my skills as a musician but also explore the digital side of music production. I have invested
+        significant time in learning editing and mastering software, integrating these tools into my creative process.<br><br>
+        I am now seeking a role that will offer opportunities for professional growth in a dynamic and innovative
+        environment, where I can contribute my diverse skills and continue expanding my knowledge.</p>
+    </div>
+  </div>
+  <app-skills></app-skills>
+</section>

@@ -1,0 +1,10 @@
+<section class="skills">
+  <h1><span>My</span> Skills</h1>
+  <div class="skills-slider">
+    <div class="slider-track">
+      <div class="slide" *ngFor="let skill of skills">
+        <img [src]="skill.logo" [alt]="skill.name">
+      </div>
+    </div>
+  </div>
+</section>

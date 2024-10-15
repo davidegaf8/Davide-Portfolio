@@ -1,0 +1,154 @@
+@keyframes slider {
+  0% {
+    opacity: 0;
+}
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.about {
+  margin-top: 80px;
+}
+
+.slider-container {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  box-shadow: 1px 0px 5px 5px rgba(0, 0, 0, 0.318);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide:not(.active) {
+  opacity: 0;
+}
+
+.about-me {
+  margin: 4vw 2vw;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  z-index: -100;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.about-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 50px 50px 10px 20px;
+  box-shadow: 1px 0px 5px 5px rgba(0, 0, 0, 0.318);
+  float: left;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  animation: slideRight 1s ease;
+}
+
+.about-photo img {
+  width: 96%;
+  height: 96%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-photo::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(
+    82deg,
+    rgba(70, 194, 254, 1) 0%,
+    rgba(4, 63, 252, 1) 74%,
+    rgba(25, 0, 125, 1) 100%
+  );
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: rotate 5s infinite;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.2s;
+  padding-bottom: 20px;
+}
+
+.about-text h1 {
+  display: inline;
+  color: rgb(0, 4, 107);
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  animation: slideTop 1s ease forwards;
+}
+
+.about-me span {
+  color: rgb(61, 123, 231);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 26px;
+  word-spacing: 2px;
+  letter-spacing: -1px;
+  border-radius: 10px;
+}
+
+/* Media query for screen width less than 900px */
+@media screen and (max-width: 900px) {
+  .slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .about-photo {
+    float: none;
+    margin: 4vw auto 0 auto;
+    width: calc(150px + 10vw);
+    height: calc(150px + 10vw);
+  }
+
+  .about-text {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .about-text h1 {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
